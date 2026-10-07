@@ -247,7 +247,8 @@ footer {
         <button type="button"
 onclick="decreaseQuantity()">−</button>
        <span id="quantity">1</span>
-       <button type="button" onclick="increaseQuantity()">+</button>
+       <button type="button" 
+onclick="increaseQuantity()">+</button>
 </div>
 
 </div>
@@ -304,7 +305,21 @@ function decreaseQuantity() {
     }
 }
 </script>
+<script>
+function increaseQuantity() {
+    const quantity = document.getElementById("quantity");
+    quantity.textContent = Number(quantity.textContent) + 1;
+}
 
+function decreaseQuantity() {
+    const quantity = document.getElementById("quantity");
+    const current = Number(quantity.textContent);
+
+    if (current > 1) {
+        quantity.textContent = current - 1;
+    }
+}
+</script>
 </body>
 </html>
 
