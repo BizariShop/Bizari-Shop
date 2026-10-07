@@ -244,10 +244,11 @@ footer {
     </select>
 
     <div class="quantity">
-        <button type="button">−</button>
-        <span>1</span>
-        <button type="button">+</button>
-    </div>
+        <button type="button"
+onclick="decreaseQuantity()">−</button>
+       <span id="quantity">1</span>
+       <button type="button" onclick="increaseQuantity()">+</button>
+</div>
 
 </div>
             
@@ -286,6 +287,21 @@ function openGallery() {
 
 function closeGallery() {
     document.getElementById("gallery").style.display = "none";
+}
+</script>
+    <script>
+function increaseQuantity() {
+    let quantity = document.getElementById("quantity");
+    quantity.textContent = parseInt(quantity.textContent) + 1;
+}
+
+function decreaseQuantity() {
+    let quantity = document.getElementById("quantity");
+    let current = parseInt(quantity.textContent);
+
+    if (current > 1) {
+        quantity.textContent = current - 1;
+    }
 }
 </script>
 
