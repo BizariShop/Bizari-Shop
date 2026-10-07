@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bizari Shop</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0b0b;
+    color: #f5d77a;
+}
+
+header {
+    text-align: center;
+    padding: 45px 20px;
+    background: #050505;
+    border-bottom: 2px solid #c9a227;
+}
+
+.crown {
+    font-size: 55px;
+    margin-bottom: -15px;
+}
+
+.logo-b {
+    font-size: 110px;
+    font-weight: bold;
+    color: #d4af37;
+    line-height: 1;
+}
+
+.logo-name {
+    font-size: 34px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: #ddd;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-top: 12px;
+}
+
+nav {
+    text-align: center;
+    padding: 18px;
+    background: #111;
+}
+
+nav a {
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+section {
+    padding: 35px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    color: #d4af37;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.product {
+    background: #151515;
+    border: 1px solid #80651b;
+    border-radius: 12px;
+    width: 260px;
+    padding: 15px;
+    text-align: center;
+}
+
+.product-image {
+       height: 270px;
+    background: #242424;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    display: block;
+}
+
+
+.product h3 {
+    color: white;
+}
+
+.price {
+    color: #d4af37;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.order {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 20px;
+    background: #d4af37;
+    color: #000;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #050505;
+    border-top: 1px solid #80651b;
+    color: #aaa;
+}
+.gallery {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-images {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.gallery-images::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-images img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    scroll-snap-align: center;
+}
+
+.close-gallery {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 10000;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="crown">♛</div>
+    <div class="logo-b">B</div>
+    <div class="logo-name">BIZARI SHOP</div>
+    <div class="subtitle">VÊTEMENTS & CHAUSSURES POUR HOMMES</div>
+</header>
+
+<nav>
+    <a href="#vetements">Vêtements</a>
+    <a href="#chaussures">Chaussures</a>
+</nav>
+
+<section id="vetements">
+    <h2 class="section-title">VÊTEMENTS</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <div class="product-image">PHOTO DU PRODUIT</div>
+            <h3>Produit 1</h3>
+            <div class="price">0000 DA</div>
+            <a class="order" href="#">Commander</a>
+        </div>
+
+        <div class="product">
+            <div class="product-image">PHOTO DU PRODUIT</div>
+            <h3>Produit 2</h3>
+            <div class="price">0000 DA</div>
+            <a class="order" href="#">Commander</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="chaussures">
+    <h2 class="section-title">CHAUSSURES</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <div class="product-image">
+            <img src="nike.jpg" alt="Nike Air Force 1"
+         onclick="openGallery()">
+          </div>
+            <h3>Chaussures 1</h3>
+            <div class="price">0000 DA</div>
+            <a class="order" href="#">Commander</a>
+        </div>
+
+        <div class="product">
+            <div class="product-image">PHOTO DE PRODUIT</div>
+            <h3>Chaussures 2</h3>
+            <div class="price">0000DA</div>
+         <a class="order" href="#">Commander</a>
+         </div>
+         </div>
+         </section>
+<footer>
+    © 2026 Bizari Shop - Tous droits réservés
+</footer>
+
+<div id="gallery" class="gallery">
+    <button class="close-gallery" onclick="closeGallery()">×</button>
+
+    <div class="gallery-images">
+      <img src="nike.jpg" alt="Nike Air Force 1">
+        <img src="Nike-detail1.jpg" alt="Nike Air Force 1">
+        <img src="Nike-detail2.jpg" alt="Nike Air Force 1">
+        <img src="Nike-detail3.jpg" alt="Nike Air Force 1">
+        <img src="Nike-detail4.jpg" alt="Nike Air Force 1">
+        <img src="Nike-detail5.jpg" alt="Nike Air Force 1">
+    </div>
+</div>
+
+<script>
+function openGallery() {
+    document.getElementById("gallery").style.display = "flex";
+}
+
+function closeGallery() {
+    document.getElementById("gallery").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+
+         
