@@ -203,9 +203,48 @@ footer {
     <div class="products">
 
         <div class="product">
-            <div class="product-image">PHOTO DU PRODUIT</div>
-            <h3>Produit 1</h3>
+            <div class="product-image">
+              <img src="Polo-noir.jpg" alt="Survêtement Polo onclick="openPolo()">
+            </div>
+
+            <h3>Survêtement Polo</h3>
+            <div style="margin-top:15px;">
+    <select id="poloSize" style="padding:10px; width:100%; border-radius:6px;">
+        <option value="">Choisir une option</option>
+        <option value="3 ans">3 ans</option>
+        <option value="4 ans">4 ans</option>
+        <option value="5 ans">5 ans</option>
+        <option value="6 ans">6 ans</option>
+        <option value="7 ans">7 ans</option>
+        <option value="8 ans">8 ans</option>
+        <option value="9 ans">9 ans</option>
+        <option value="10 ans">10 ans</option>
+        <option value="11 ans">11 ans</option>
+        <option value="12 ans">12 ans</option>
+        <option value="13 ans">13 ans</option>
+        <option value="14 ans">14 ans</option>
+        <option value="15 ans">15 ans</option>
+        <option value="16 ans">16 ans</option>
+        <option value="17 ans">17 ans</option>
+        <option value="18 ans">18 ans</option>
+    </select>
+</div>
             <div class="price">0000 DA</div>
+            <div style="margin-top:15px;">
+    <p style="color:white; margin-bottom:8px;">Couleur</p>
+
+    <button onclick="changePoloColor('Polo-rouge.jpg')"
+            style="width:35px; height:35px; border-radius:50%; background:red; border:2px solid white; margin:5px; cursor:pointer;">
+    </button>
+
+    <button onclick="changePoloColor('Polo-bleu.jpg')"
+            style="width:35px; height:35px; border-radius:50%; background:#003366; border:2px solid white; margin:5px; cursor:pointer;">
+    </button>
+
+    <button onclick="changePoloColor('Polo-noir.jpg')"
+            style="width:35px; height:35px; border-radius:50%; background:black; border:2px solid white; margin:5px; cursor:pointer;">
+    </button>
+</div>
             <a class="order" href="#">Commander</a>
         </div>
 
@@ -263,7 +302,21 @@ onclick="increaseQuantity()">+</button>
          <a class="order" href="#">Commander</a>
          </div>
          </div>
-         </section>
+</section>
+   <div id="poloGallery" class="gallery">
+    <button class="close-gallery" onclick="closePolo()">×</
+   button>
+
+    <div style="text-align:center; width:100%;">
+        <img id="poloMainImage"
+             src="Polo-noir.jpg"
+             alt="Survêtement Polo"
+             style="width:90%; max-width:500px; height:60vh;
+    object-fit:contain;">
+
+        <h2 style="color:white;">Survêtement Polo</h2>
+    </div>
+</div>
 <footer>
     © 2026 Bizari Shop - Tous droits réservés
 </footer>
@@ -282,7 +335,15 @@ onclick="increaseQuantity()">+</button>
 </div>
 
 <script>
-function openGallery() {
+function openGallery() {function openPolo() {
+    document.getElementById("poloGallery").style.display = "flex";
+}
+
+function closePolo() {
+    document.getElementById("poloGallery").style.display = "none";
+}function changePoloColor(imageName) {
+    document.getElementById("poloMainImage").src = imageName;
+}
     document.getElementById("gallery").style.display = "flex";
 }
 
